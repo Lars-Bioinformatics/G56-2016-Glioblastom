@@ -1,0 +1,1 @@
+snakemake -s /work/sduvarcall/G56-2016-Glioblastom/WES/scripts/mutect2-gatk4-wes-somatic-hg38.smk -j 999 --cluster "sbatch -c 4 --mem 20g"

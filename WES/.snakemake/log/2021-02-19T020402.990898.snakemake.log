@@ -1,0 +1,34 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job counts:
+	count	jobs
+	1	all
+	23	bam2seqz
+	23	sequenza_analysis
+	23	seqz_binning
+	70
+Select jobs to execute...
+
+[Fri Feb 19 02:04:03 2021]
+rule bam2seqz:
+    input: /work/sduvarcall/G56-2016-Glioblastom/WES/bam/G56-blod-pt1_nimblegen-medexome_HGL2LDSXX.recalibrated.bam, /work/sduvarcall/G56-2016-Glioblastom/WES/bam/G56-sampleA1_nimblegen-medexome_HGL2LDSXX.recalibrated.bam, /work/sduvarcall/G37-2016-BRCAX-Genomes/reference_files_GRCh38/core_ref_GRCh38_hla_decoy_ebv/genome.gc50Base.wig.gz
+    output: /work/sduvarcall/G56-2016-Glioblastom/WES/sequenza/G56-sampleA1_nimblegen-medexome_HGL2LDSXX_vs_G56-blod-pt1_nimblegen-medexome_HGL2LDSXX.seqz.gz
+    jobid: 3
+    wildcards: tumor=G56-sampleA1_nimblegen-medexome_HGL2LDSXX, normal=G56-blod-pt1_nimblegen-medexome_HGL2LDSXX
+
+[Fri Feb 19 02:04:03 2021]
+Error in rule bam2seqz:
+    jobid: 3
+    output: /work/sduvarcall/G56-2016-Glioblastom/WES/sequenza/G56-sampleA1_nimblegen-medexome_HGL2LDSXX_vs_G56-blod-pt1_nimblegen-medexome_HGL2LDSXX.seqz.gz
+    shell:
+        
+        sequenza-utils bam2seqz -n /work/sduvarcall/G56-2016-Glioblastom/WES/bam/G56-blod-pt1_nimblegen-medexome_HGL2LDSXX.recalibrated.bam -t /work/sduvarcall/G56-2016-Glioblastom/WES/bam/G56-sampleA1_nimblegen-medexome_HGL2LDSXX.recalibrated.bam         -q 20 -N 20 -f "illumina" --fasta /work/sduvarcall/G37-2016-BRCAX-Genomes/reference_files_GRCh38/core_ref_GRCh38_hla_decoy_ebv/genome.fa -gc /work/sduvarcall/G37-2016-BRCAX-Genomes/reference_files_GRCh38/core_ref_GRCh38_hla_decoy_ebv/genome.gc50Base.wig.gz -o /work/sduvarcall/G56-2016-Glioblastom/WES/sequenza/G56-sampleA1_nimblegen-medexome_HGL2LDSXX_vs_G56-blod-pt1_nimblegen-medexome_HGL2LDSXX.seqz.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /work/sduvarcall/G56-2016-Glioblastom/WES/scripts/.snakemake/log/2021-02-19T020402.990898.snakemake.log
